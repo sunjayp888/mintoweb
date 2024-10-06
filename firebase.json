@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "dist/mintoweb/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
