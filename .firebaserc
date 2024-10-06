@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "mintoweb-bf780"
-  }
+  },
+  "targets": {
+    "mintoweb-bf780": {
+      "hosting": {
+        "mintoweb": [
+          "mintoweb-bf780"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
