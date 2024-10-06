@@ -1,15 +1,5 @@
 {
   "projects": {
-    "default": "mintoweb"
-  },
-  "targets": {
-    "mintoweb": {
-      "hosting": {
-        "mintoweb": [
-          "mintoweb-85324"
-        ]
-      }
-    }
-  },
-  "etags": {}
+    "default": "mintoweb-bf780"
+  }
 }
