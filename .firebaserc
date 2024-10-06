@@ -1,5 +1,13 @@
 {
-  "projects": {
-    "default": "mintoweb"
+    "targets": {
+      "your-project-id": {
+        "hosting": {
+          "site": "mintoweb"
+        }
+      }
+    },
+    "projects": {
+      "default": "mintoweb"
+    }
   }
-}
+  

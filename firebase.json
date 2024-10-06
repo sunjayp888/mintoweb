@@ -1,6 +1,7 @@
-
 {
-    "hosting": {
+  "hosting": [
+    {
+      "target": "mintoweb",
       "public": "dist/mintoweb",
       "ignore": [
         "firebase.json",
@@ -14,5 +15,5 @@
         }
       ]
     }
-  }
-  
+  ]
+}
