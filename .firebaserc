@@ -1,13 +1,15 @@
 {
-    "targets": {
-      "mintoweb-85324": {
-        "hosting": {
-          "site": "mintoweb-85324.firebaseapp.com" 
-        }
-      }
-    },
     "projects": {
       "default": "mintoweb-85324"
+    },
+    "targets": {
+      "your-project-id": {
+        "hosting": {
+          "mintoweb": [
+            "mintoweb-85324"
+          ]
+        }
+      }
     }
   }
   
