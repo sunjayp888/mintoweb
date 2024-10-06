@@ -27,8 +27,7 @@ export class HomeComponent implements OnInit {
   brandMobileMap: { [key: string]: string[] } = {
     'Samsung': ['Samsung Galaxy S21', 'Samsung Galaxy Note 10', 'Samsung V20'],
     'Apple': ['iPhone 12', 'iPhone 13', 'iPhone 14'],
-    'Vivo': ['Vivo Y91', 'Vivo X60', 'Vivo V20'],
-    'OnePlus': ['OnePlus 9', 'OnePlus 8T', 'OnePlus Nord']
+    'Vivo': ['Vivo Y91', 'Vivo X60', 'Vivo V20']
   };
 
   filteredBrands: string[] = [];
