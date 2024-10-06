@@ -1,16 +1,9 @@
 {
   "projects": {
-    "default": "mintoweb-85324"
+    "default": "mintoweb"
   },
   "targets": {
-    "your-project-id": {
-      "hosting": {
-        "mintoweb": [
-          "mintoweb-85324"
-        ]
-      }
-    },
-    "mintoweb-85324": {
+    "mintoweb": {
       "hosting": {
         "mintoweb": [
           "mintoweb-85324"
