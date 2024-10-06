@@ -1,0 +1,157 @@
+/* src/app/home/home.component.css */
+/* Flex container to align the search input and button horizontally */
+.search-container {
+  display: flex;              /* Set to flex to align items in a row */
+  justify-content: center;     /* Center the search box and button */
+  align-items: center;         /* Vertically align items */
+  gap: 5px;                   /* Add space between the input and button */
+  margin-top: 20px;            /* Adjust the margin for spacing from top */
+}
+  
+  mat-form-field {
+    width: 300px;
+    margin-right: 5px;
+  }
+  
+  button {
+    height: 50px !important;
+  }
+
+
+
+  /* src/app/home/home.component.css */
+::placeholder {
+    color: #9e9e9e;  /* Light gray color */
+    opacity: 1;  /* Make sure opacity is 100% so it's not further faded */
+  }
+  
+  input::placeholder {
+    color: #9e9e9e;  /* Light gray for input fields */
+  }
+  
+  .mat-input-element::placeholder {
+    color: #9e9e9e;  /* Specifically for Angular Material input */
+  }
+
+ /* Style for the card container to display cards vertically */
+ .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Space between cards */
+}
+/* Example card with shadow similar to Material Design buttons */
+.example-card {
+  width: 150px; /* Fixed width */
+  height: 150px; /* Fixed height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2); /* Add box shadow */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+/* Add hover effect to increase the shadow and create a slight elevation */
+.example-card:hover {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2), 
+              0px 6px 10px rgba(0, 0, 0, 0.14), 
+              0px 8px 12px rgba(0, 0, 0, 0.12); /* Elevation on hover */
+  transform: translateY(-5px); /* Small upward movement */
+}
+
+/* Override the primary color for the mat-fab button */
+.search-button {
+  background-color: #e10070 !important; /* Custom primary color */
+  color: white !important;  
+  border-radius: 4px !important;
+          /* Text color */
+}
+
+.mat-mdc-card-avatar {
+  height: 60px;
+  width: 40px;
+  border-radius: 0% !important;
+  flex-shrink: 0;
+  margin-bottom: 16px;
+  object-fit: cover;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Make sure content fills the card */
+}
+
+.card-image {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.card-footer {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* src/app/home/home.component.css */
+.banner-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; /* Space between banner and content */
+}
+
+.dropdown-card {
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* src/app/home/home.component.css */
+
+/* Style for the brand card */
+/* Full-page container to center the card */
+.full-page-container {
+  display: flex;
+  justify-content: center; /* Horizontally centers the card */
+  align-items: center;     /* Vertically centers the card */
+  margin-top: 20px;
+  
+}
+
+/* Style for the brand card */
+.brand-card {
+  padding: 20px;
+  width: 100%;
+  max-width: 500px; /* Control the width of the card */
+  background-color: white;
+  color: black;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+  border-bottom: 1px solid #e0e0e0; /* Adds a light bottom border for separation */
+}
+
+/* Style for the form field within the card */
+.autocomplete-field {
+  width: 100%;
+}
+
+/* Center the search button below the form fields */
+.search-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.display-none{
+  display: none;
+}

@@ -1,0 +1,65 @@
+<!-- src/app/home/home.component.html -->
+
+
+<!-- <div class="search-container">
+  <mat-form-field appearance="outline">
+    <input matInput [(ngModel)]="searchText" [placeholder]="placeholderText">
+  </mat-form-field>
+  <button class="search-button" mat-fab extended color="primary" (click)="onSearch()">
+    Search
+  </button>
+</div> -->
+
+<!-- Brand Autocomplete inside a Card -->
+<div class="full-page-container">
+  <mat-card class="brand-card">
+    <mat-card-header>
+    </mat-card-header>
+    <mat-card-content>
+  
+      <!-- Brand Autocomplete -->
+      <mat-form-field appearance="outline" class="autocomplete-field">
+        <input
+          matInput
+          [(ngModel)]="selectedBrand"
+          [matAutocomplete]="brandAuto"
+          placeholder="Select Brand"
+          (input)="onBrandInput($event)"
+        />
+        <mat-autocomplete #brandAuto="matAutocomplete" (optionSelected)="onBrandChange($event.option.value)">
+          <mat-option *ngFor="let brand of filteredBrands" [value]="brand">{{ brand }}</mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+  
+      <!-- Mobile Autocomplete -->
+      <mat-form-field appearance="outline" class="autocomplete-field">
+        <input
+          matInput
+          [(ngModel)]="selectedMobile"
+          [matAutocomplete]="mobileAuto"
+          placeholder="Select Mobile"
+        />
+        <mat-autocomplete #mobileAuto="matAutocomplete">
+          <mat-option *ngFor="let mobile of filteredMobiles" [value]="mobile">{{ mobile }}</mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <!-- Centered Search Button -->
+    <div class="search-button-container">
+      <button class="search-button" mat-raised-button color="primary" (click)="onSearch()">Search</button>
+    </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<!-- Dummy Cards Section -->
+<!-- src/app/home/home.component.html -->
+<!-- src/app/home/home.component.html -->
+<div class="card-container display-none" >
+  <mat-card class="example-card" *ngFor="let category of serviceCategories">
+    <div class="card-content">
+      <img mat-card-avatar class="card-image" [src]="getFullImageUrl(category.category_icon)"
+        alt="{{ category.service_category }} icon" />
+      <mat-card-footer class="card-footer">{{ category.service_category }}</mat-card-footer>
+    </div>
+  </mat-card>
+</div>
