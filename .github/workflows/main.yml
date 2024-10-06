@@ -3,30 +3,31 @@ name: Deploy to Firebase Hosting
 on:
   push:
     branches:
-      - main  # or your preferred branch name
+      - main  # Or specify the branch you want to trigger deployment
 
 jobs:
-  build_and_deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v1
+    - name: Install Node.js
+      uses: actions/setup-node@v2
       with:
-        node-version: '18.x'
+        node-version: '18.x'  # Use Node.js version 18 or higher
 
     - name: Install dependencies
       run: npm install
 
-    - name: Build Angular project
-      run: npm run build --prod
+    - name: Build the project
+      run: npm run build -- --configuration production
 
-    - name: Deploy to Firebase
-      run: |
-        npm install -g firebase-tools
-        firebase deploy --token "MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCfxu9Zo2+qVYO6\nvnAuZISgriIBfUCKAVCFxC9zZRTmjZ0KO27OLN+d7rPPoZxXL3K1qsxhvFeuji7O\nrkFLilnRVyuAfPkdRVtTTFCRHG7pXw0zpAOkKSnNUMHcFcj9oUYCFr4P0XvWJ4oD\ni/c6v/Uv7PfGnDdzxxzR1GTtfysjgcBUEFPqslrywhxvD6wJCZB+sJxA4KfwkmWX\nYteIgy6xtf7hdwza57hBtKGxyjd90wmTNkePRNq0w0i6HHm0TSeTxa3IPTb/FSzF\nN8ZWmtFJGGBfUv4anVwiR4+WgSb1aRTVrRsqjHRBeoAAZ50x3ZKQfHdiqAN0raFB\nCGzgP0pPAgMBAAECggEABoSViAkYSZESfiA9sE7OcEWaQohLBTY3hDV0IBd8Ckm1\nodC53PRMrQMrV6mGmLHpUorkqooF46uOMkU+iafbsSQGtMekW/LT3mqLENhhl+iW\nP8iNk3lQaL1GI0XKPLqDAhvOZhPMIvja8vkXPVDOXkWi9/mwc2sofFDXSy74Ygrc\n+DXV6d98esKTEmlW9eDYgNbUiadOKG43VnYl0Qg96DqU4V7kvPMj6URuslKqImj7\n2SMvTBvIknkzZf9grkilYAMxmACr+YkEkyPxkjV2Mx3QzSY6ZqDo2eHZhaGAyqtN\nBs+TpkqT4CiZKBZW0fAFPb0JH08qZTnSooxjzhf4AQKBgQDWAeX+K0adM55hALdp\nc+UGT+phWl0rmBI3ymJPoQYmLWRUugS2fU+DqEok6TwoFL/OAz4YeXWfV4Gopy77\nhgOfzdnZ9HzOapoxk/zHZuihbOKg+sZxevF9bW3gkP3EemkOAo6pQg/Zg+TQVGOS\n/1Wct9nqDLYhCCRzKrdH0mcYAQKBgQC/IOsTwLkgA+Lf3fSLPU5xmpwoX5xBoCMg\nqlcdQ6WLFMQUu8rN4eQm9o1kuXyjDpNgIQjZ+qfDgLUR2/xp3Yjnm7wVZnha9oip\n4agWhnVkOwFs845EoUT7ybSixE1Kbff26zD6LfubY2Ln9Th5cBGXKwFczZANMFVL\nWkCkHz7iTwKBgQDOcqpilXDbec5RmZVV/11yx2k9XSUARwVcGLraQmZiMevV6FVf\njmdEhPZxwSYtLEcUAADJL3KOsqX8ArvKHLAmWzjLj5VOs3voU/DIk7fa8eV2kjUZ\niBaqfwQ+XODRx5zMzR6+nWIY3anAZ4hfaD44nwtzQ6v3FZnEF/MTMCAQAQKBgQC/\nFzZxhVqR+9C1asC5Bg6L3r0KUK11n5n/as+2XpAAwj5ZTHiz54mouxEbB6jpjgUj\nM2QaLFXXTbO7q2puniPnDPm7m7vxllOFJixceQqdr7D5MXmofGTwKPcFVabBJ7mn\nkfZh69+HuJKGv9I6+CVeMo0mMBA6X3yn3hCLBwJkWQKBgQClrDyK1cW7CnGuhbvo\n6+R3Pt5qf9kDhGdQFOKdd5Tp5AvtLyu3wPVls07vbuR7WjDxesY7wA5FnpMipo32\n3jbu9ONao3E3ACTZQzahkuFTVa2chTL5VPP+aioYB24HF7m08u6BU+9gYSPeEvPn\nYwNKx1/6ZkHuCM9mV6Xi65GJzw=="
+    - name: Install Firebase CLI
+      run: npm install -g firebase-tools  # Install Firebase CLI
+
+    - name: Deploy to Firebase Hosting
+      run: firebase deploy --only hosting
       env:
-        FIREBASE_TOKEN: MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCfxu9Zo2+qVYO6\nvnAuZISgriIBfUCKAVCFxC9zZRTmjZ0KO27OLN+d7rPPoZxXL3K1qsxhvFeuji7O\nrkFLilnRVyuAfPkdRVtTTFCRHG7pXw0zpAOkKSnNUMHcFcj9oUYCFr4P0XvWJ4oD\ni/c6v/Uv7PfGnDdzxxzR1GTtfysjgcBUEFPqslrywhxvD6wJCZB+sJxA4KfwkmWX\nYteIgy6xtf7hdwza57hBtKGxyjd90wmTNkePRNq0w0i6HHm0TSeTxa3IPTb/FSzF\nN8ZWmtFJGGBfUv4anVwiR4+WgSb1aRTVrRsqjHRBeoAAZ50x3ZKQfHdiqAN0raFB\nCGzgP0pPAgMBAAECggEABoSViAkYSZESfiA9sE7OcEWaQohLBTY3hDV0IBd8Ckm1\nodC53PRMrQMrV6mGmLHpUorkqooF46uOMkU+iafbsSQGtMekW/LT3mqLENhhl+iW\nP8iNk3lQaL1GI0XKPLqDAhvOZhPMIvja8vkXPVDOXkWi9/mwc2sofFDXSy74Ygrc\n+DXV6d98esKTEmlW9eDYgNbUiadOKG43VnYl0Qg96DqU4V7kvPMj6URuslKqImj7\n2SMvTBvIknkzZf9grkilYAMxmACr+YkEkyPxkjV2Mx3QzSY6ZqDo2eHZhaGAyqtN\nBs+TpkqT4CiZKBZW0fAFPb0JH08qZTnSooxjzhf4AQKBgQDWAeX+K0adM55hALdp\nc+UGT+phWl0rmBI3ymJPoQYmLWRUugS2fU+DqEok6TwoFL/OAz4YeXWfV4Gopy77\nhgOfzdnZ9HzOapoxk/zHZuihbOKg+sZxevF9bW3gkP3EemkOAo6pQg/Zg+TQVGOS\n/1Wct9nqDLYhCCRzKrdH0mcYAQKBgQC/IOsTwLkgA+Lf3fSLPU5xmpwoX5xBoCMg\nqlcdQ6WLFMQUu8rN4eQm9o1kuXyjDpNgIQjZ+qfDgLUR2/xp3Yjnm7wVZnha9oip\n4agWhnVkOwFs845EoUT7ybSixE1Kbff26zD6LfubY2Ln9Th5cBGXKwFczZANMFVL\nWkCkHz7iTwKBgQDOcqpilXDbec5RmZVV/11yx2k9XSUARwVcGLraQmZiMevV6FVf\njmdEhPZxwSYtLEcUAADJL3KOsqX8ArvKHLAmWzjLj5VOs3voU/DIk7fa8eV2kjUZ\niBaqfwQ+XODRx5zMzR6+nWIY3anAZ4hfaD44nwtzQ6v3FZnEF/MTMCAQAQKBgQC/\nFzZxhVqR+9C1asC5Bg6L3r0KUK11n5n/as+2XpAAwj5ZTHiz54mouxEbB6jpjgUj\nM2QaLFXXTbO7q2puniPnDPm7m7vxllOFJixceQqdr7D5MXmofGTwKPcFVabBJ7mn\nkfZh69+HuJKGv9I6+CVeMo0mMBA6X3yn3hCLBwJkWQKBgQClrDyK1cW7CnGuhbvo\n6+R3Pt5qf9kDhGdQFOKdd5Tp5AvtLyu3wPVls07vbuR7WjDxesY7wA5FnpMipo32\n3jbu9ONao3E3ACTZQzahkuFTVa2chTL5VPP+aioYB24HF7m08u6BU+9gYSPeEvPn\nYwNKx1/6ZkHuCM9mV6Xi65GJzw==
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}  # Use the token stored in GitHub secrets
