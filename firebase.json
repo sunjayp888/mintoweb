@@ -1,7 +1,7 @@
 {
   "hosting": [
     {
-      "target": "mintoweb-85324",
+      "target": "mintoweb-85324.firebaseapp.com",
       "public": "dist/mintoweb",
       "ignore": [
         "firebase.json",
