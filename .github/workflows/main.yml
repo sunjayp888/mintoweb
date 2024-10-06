@@ -30,7 +30,7 @@ jobs:
     - name: Echo part of Firebase token for debugging
       run: echo ${FIREBASE_TOKEN}
       env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: echo "${FIREBASE_TOKEN:0:1000}"
 
     - name: Deploy to Firebase Hosting
       run: firebase deploy --only hosting
