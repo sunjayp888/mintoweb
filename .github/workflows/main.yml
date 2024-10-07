@@ -33,6 +33,4 @@ jobs:
         export GOOGLE_APPLICATION_CREDENTIALS="$HOME/firebase-key.json"
 
     - name: Deploy to Firebase Hosting
-      run: firebase deploy --only hosting
-      env:
-        GOOGLE_APPLICATION_CREDENTIALS: $HOME/firebase-key.json
+      run: firebase deploy --only hosting --token "${{ secrets.FIREBASE_TOKEN }}"
