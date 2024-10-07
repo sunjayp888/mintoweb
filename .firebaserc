@@ -1,12 +1,12 @@
 {
   "projects": {
-    "default": "mintoweb-85324"
+    "default": "mintoweb-bf780"
   },
   "targets": {
     "mintoweb-85324": {
       "hosting": {
         "mintoweb": [
-          "mintoweb-85324"
+          "mintoweb-bf780"
         ]
       }
     }

@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "mintoweb-85324",
+    "site": "mintoweb-bf780",
     "public": "dist/mintoweb/browser",
     "ignore": [
       "firebase.json",
